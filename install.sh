@@ -30,10 +30,6 @@ error() {
     exit 1
 }
 
-echo =====================================================
-echo "$BLUE QID OAuth账号中心系统安装脚本$NC"
-echo =====================================================
-
 # 检查系统要求
 check_requirements() {
     info "检查系统要求..."
@@ -164,10 +160,8 @@ download_project() {
     # 确保curl或wget已安装
     ensure_download_tools
     
-    # 设置下载URL（由用户定义）
-    read -p "请输入项目ZIP包的下载URL: " DOWNLOAD_URL
     
-    if [ -z "$DOWNLOAD_URL" ]; then
+    if [ -z "https://github.com/qingqiu66/Qid-oauth/releases/download/Qid/Qid.zip" ]; then
         error "下载URL不能为空。"
     fi
     
